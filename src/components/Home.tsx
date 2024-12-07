@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardMedia, Collapse, Divider, IconButton, IconButtonProps, List, ListItem, ListItemAvatar, ListItemText, styled, Typography } from '@mui/material';
+import {Button, Card, CardActions, CardContent, CardMedia, Collapse, IconButton, IconButtonProps, List, styled, Typography } from '@mui/material';
 import { Recipe } from '../interface/Recipe';
 import React from 'preact/compat';
 import AddIcon from '@mui/icons-material/Add';
@@ -43,8 +43,9 @@ export default function Home(props: any) {
 
       return (
         <div>
-          <Button variant="outlined" startIcon={<AddIcon />} onClick={props.addRecipe}>Add Recipe</Button>
-                <h1>Recipe List</h1>
+          <Button style={{ float: 'right' }} variant="outlined" startIcon={<AddIcon />} onClick={props.addRecipe}>Add Recipe</Button>
+                <h1>SIMPLE RECIPES MADE FOR
+                <i> real, actual, everyday life.</i></h1>
 
                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     {props.recipes.map((recipe: Recipe) => (
