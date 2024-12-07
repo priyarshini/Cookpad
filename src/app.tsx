@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'preact/hooks';
 import './app.css'
-import Home from './components/home';
+import Home from './components/Home';
 import { Recipe } from './interface/Recipe';
+import { AppBar, Toolbar, IconButton, Typography, Box } from '@mui/material';
+import CookieIcon from '@mui/icons-material/Cookie';
 
 export function App() {
 
@@ -45,7 +47,24 @@ function addRecipe(){
 
 
   return (
-    <Home recipes={recipes} addRecipe={addRecipe}/>
+    <>
+
+    <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar variant="dense">
+              
+              <Typography variant="h6" color="inherit" component="div">
+                <IconButton color="inherit" aria-label="menu" >
+                C<CookieIcon /><CookieIcon />K PAD
+              </IconButton>
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Box>
+
+    <Home recipes={recipes} addRecipe={addRecipe} />
+    
+    </>
 
   )
 }
